@@ -1,14 +1,19 @@
-import { ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 
 type Props = {
   text: string;
   styles: string;
-  icon: ReactNode;
+  icon?: ReactNode;
+  onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
+  isActive?: boolean;
 };
 
-const Btn = ({ text, icon, styles }: Props) => {
+const Btn = ({ text, icon = null, styles, onClick, isActive }: Props) => {
   return (
-    <button className={`rounded-full ${styles}`}>
+    <button
+      className={`rounded-full ${styles} ${isActive ? 'active' : ''}`}
+      onClick={onClick}
+    >
       {text}
       {icon}
     </button>
