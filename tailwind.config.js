@@ -6,11 +6,11 @@ export const theme = {
   container: {
     center: 'true',
     padding: {
-      DEFAULT: '0 2rem',
-      phoneMax: '0 1rem',
+      DEFAULT: '2rem',
+      phoneMax: '1rem',
     },
-    margin: '0 auto',
-    'max-width': '1400px',
+    // margin: '0 auto',
+    'min-width': '1400px',
   },
   // doesn't effect core plugins
   extend: {
@@ -43,6 +43,7 @@ export const theme = {
       space1r: '1rem',
       space2r: '2rem',
       space4r: '4rem',
+      pageGap: '87px',
     },
     screens: {
       tablet: { max: '850px' },

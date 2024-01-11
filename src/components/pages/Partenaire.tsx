@@ -1,6 +1,6 @@
 const Partenaire = () => {
   return (
-    <div className="bg-blueAccent mt-[87px] py-[120px]">
+    <div className="bg-blueAccent mt-pageGap py-[120px]">
       <div className="container displayFlex-[center] flex-col">
         <h3 className="text-titleXL text-background">
           Vous avez un site e-commerce ou une boutique ?

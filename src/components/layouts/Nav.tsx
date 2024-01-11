@@ -1,4 +1,4 @@
-import logo from '../assets/Siko-logo.png';
+import logo from '../../assets/Siko-logo.png';
 
 const Nav = () => {
   return (
