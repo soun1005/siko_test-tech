@@ -1,5 +1,4 @@
 import logo from '../assets/Siko-logo.png';
-import Btn from './Btn';
 
 const Nav = () => {
   return (
@@ -30,15 +29,12 @@ const Nav = () => {
           </li>
         </ul>
         <div>
-          <Btn
-            text="Simulation"
-            icon={
-              <span className="material-symbols-outlined">
-                keyboard_double_arrow_right
-              </span>
-            }
-            styles="border-solid border-[3px] py-2 px-10 displayFlex-[center] border-yellow"
-          />
+          <button className="rounded-full border-solid border-[3px] py-2 px-10 displayFlex-[center] border-yellow ">
+            <p>Simulation</p>
+            <span className="material-symbols-outlined">
+              keyboard_double_arrow_right
+            </span>
+          </button>
         </div>
       </div>
     </div>
