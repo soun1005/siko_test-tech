@@ -3,6 +3,7 @@ import Hero from './components/pages/Hero';
 import Partenaire from './components/pages/Partenaire';
 import Review from './components/pages/Review';
 import Contact from './components/pages/Contact';
+import Footer from './components/layouts/Footer';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Partenaire />
       <Review />
       <Contact />
+      <Footer />
     </div>
   );
 }
