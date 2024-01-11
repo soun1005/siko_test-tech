@@ -1,8 +1,8 @@
 import { MouseEventHandler, useState } from 'react';
 
-import Btn from './Btn';
-import information from '../assets/information.json';
-import HeroCard from './HeroCard';
+import HeroBtn from '../HeroBtn';
+import information from '../../assets/information.json';
+import HeroCard from '../HeroCard';
 
 const Hero = () => {
   // default card is set to first
@@ -22,8 +22,6 @@ const Hero = () => {
       (info) => info.title === selectedTitle
     );
 
-    // console.log(selectedInfo);
-
     // selectedInfo가 있을 시, setHeroCard에 저장
     if (selectedInfo) {
       setHeroCard(selectedInfo);
@@ -38,7 +36,7 @@ const Hero = () => {
 
   const buttons = information.map((el, index) => {
     return (
-      <Btn
+      <HeroBtn
         text={el.title}
         key={el.id}
         onClick={handleHeroCard}
@@ -48,14 +46,16 @@ const Hero = () => {
   });
 
   return (
-    <div className="bg-yellowAccent">
-      <div className="container displayFlex-[center] flex-col">
-        <h1>Découvrez notre gamme de services pour toutes les mobilités</h1>
+    <div className="text-white w-full h-auto">
+      <div className="container displayFlex-[center] flex-col w-full h-full">
+        <h1 className="mb-[87px] text-titleXL">
+          Découvrez notre gamme de services pour toutes les mobilités
+        </h1>
         {/* btn wrap */}
         <div className="btnWrap w-full displayFlex-[space-around]">
           {buttons}
         </div>
-        <div className="infoWrap">
+        <div className="infoWrap h-full w-full">
           <HeroCard data={heroCard} />
         </div>
       </div>

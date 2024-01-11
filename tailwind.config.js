@@ -30,8 +30,9 @@ export const theme = {
     },
     fontSize: {
       titleXL: '40px',
-      titleL: '24px',
-      titleM: '18px',
+      titleL: '32px',
+      titleM: '24px',
+      titleS: '18px',
       basic: '16px',
       medium: '14px',
     },
@@ -41,6 +42,7 @@ export const theme = {
       space10: '10px',
       space1r: '1rem',
       space2r: '2rem',
+      space4r: '4rem',
     },
     screens: {
       tablet: { max: '850px' },
