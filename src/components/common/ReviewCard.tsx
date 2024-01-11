@@ -16,14 +16,14 @@ const ReviewCard = ({ data }: ReviewCardProps) => {
 
     return (
       <div
-        className="text-white bg-gray1 flex flex-col justify-between aspect-square p-[33px] rounded-[48px]"
+        className="w-full h-full text-white bg-gray1 flex flex-col justify-between aspect-square p-[33px] rounded-[48px]"
         key={id}
       >
         <div>
-          <span>{title}</span>
-          <p>{description}</p>
+          <span className=" inline-block text-titleS mb-[1rem]">{title}</span>
+          <p className="text-medium  text-gray4">{description}</p>
         </div>
-        <span>{name}</span>
+        <span className="text-medium  text-gray4">- {name}</span>
       </div>
     );
   });

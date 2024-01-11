@@ -1,8 +1,8 @@
 import { MouseEventHandler, useState } from 'react';
 
-import HeroBtn from '../HeroBtn';
+import HeroBtn from '../common/HeroBtn';
 import information from '../../assets/information.json';
-import HeroCard from '../HeroCard';
+import HeroCard from '../common/HeroCard';
 
 const Hero = () => {
   // default card is set to first
