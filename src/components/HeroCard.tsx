@@ -16,7 +16,7 @@ const HeroCard: React.FC<HeroCardProps> = ({ data }) => {
 
   return (
     <div key={id} className="w-full h-full displayFlex-[center] mt-space4r">
-      <div className="w-3/4 aspect-{3/4} h-full bg-gray1 displayFlex-[center] p-5 rounded-[48px]">
+      <div className="w-3/4 aspect-{3/4} bg-gray1 flex justify-center p-5 rounded-[48px]">
         {/* image wrap */}
         <div className="aspect-{3/4} w-1/3 h-full ">
           <img
@@ -26,7 +26,7 @@ const HeroCard: React.FC<HeroCardProps> = ({ data }) => {
           />
         </div>
         {/* information wrap */}
-        <div className="infoWrap w-2/3 pl-[53px] pr-[33px] flex justify-between flex-col h-full ">
+        <div className="infoWrap w-2/3 pl-[53px] pr-[33px] flex justify-between flex-col">
           <div>
             <h2 className="text-titleL">{title}</h2>
             {splitedSubtitle.map((string, index) => {
