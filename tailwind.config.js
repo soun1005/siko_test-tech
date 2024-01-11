@@ -60,6 +60,13 @@ export const plugins = [
         'align-items': 'center',
         'justify-content': justifyContent,
       }),
+
+      // flexColumn-[align items value]
+      flexColumn: (alignItems) => ({
+        display: 'flex',
+        'align-items': alignItems,
+        'flex-direction': 'column',
+      }),
     });
   }),
 ];

@@ -2,6 +2,7 @@ import Nav from './components/layouts/Nav';
 import Hero from './components/pages/Hero';
 import Partenaire from './components/pages/Partenaire';
 import Review from './components/pages/Review';
+import Contact from './components/pages/Contact';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Hero />
       <Partenaire />
       <Review />
+      <Contact />
     </div>
   );
 }
