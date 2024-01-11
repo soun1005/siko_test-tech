@@ -51,11 +51,11 @@ const Contact = () => {
             >
               {/* name */}
               <div className="flexColumn-[start]">
-                <label className="mb-1">Nom</label>
+                <label className="mb-1 text-medium">Nom</label>
                 <input
                   {...register('name')}
                   placeholder="Votre nom"
-                  className="w-full h-[2rem] rounded-[6px] border border-gray3 bg-yellowAccent"
+                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3 bg-yellowAccent placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
                 />
               </div>
               <div className="error">
@@ -65,11 +65,11 @@ const Contact = () => {
               </div>
               {/* email */}
               <div className="flexColumn-[start]">
-                <label className="mb-1">Email</label>
+                <label className="mb-1 text-medium">Email</label>
                 <input
                   {...register('email')}
                   placeholder="Votre email address"
-                  className="w-full h-[2rem] rounded-[6px] border border-gray3 bg-yellowAccent"
+                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3 bg-yellowAccent placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
                 />
               </div>
               <div className="error">
@@ -80,10 +80,10 @@ const Contact = () => {
 
               {/* phone */}
               <div className="flexColumn-[start]">
-                <label className="mb-1">Phone</label>
+                <label className="mb-1 text-medium">Phone</label>
                 <input
                   type="number"
-                  className="w-full h-[2rem] rounded-[6px] border border-gray3 bg-yellowAccent"
+                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3 bg-yellowAccent placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
                   {...register('phone')}
                   placeholder="Votre numéro de téléphone"
                 />
@@ -95,9 +95,9 @@ const Contact = () => {
               </div>
 
               <div className="flexColumn-[start]">
-                <label className="mb-1">Message</label>
+                <label className="mb-1 text-medium">Message</label>
                 <input
-                  className="w-full h-[2rem] rounded-[6px] border border-gray3 bg-yellowAccent"
+                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3 bg-yellowAccent placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
                   {...register('message')}
                   placeholder="Saisir votre message"
                 />
@@ -108,8 +108,8 @@ const Contact = () => {
                   : ''}
               </div>
 
-              <button className="mt-[40px]">
-                <span>Submit</span>
+              <button className="mt-[40px] bg-background rounded-[5px] py-1">
+                <span className="text-white text-medium">Submit</span>
               </button>
             </form>
           </div>
