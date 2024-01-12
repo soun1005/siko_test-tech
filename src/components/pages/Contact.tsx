@@ -1,7 +1,8 @@
+// import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { string } from 'yup';
+import { string, number } from 'yup';
 import facebook from '../../assets/facebook.png';
 import twitter from '../../assets/twitter.png';
 import whatsapp from '../../assets/whatsapp.png';
@@ -10,7 +11,7 @@ import linkedin from '../../assets/linkedin.png';
 type FormData = {
   name: string;
   email: string;
-  phone: string;
+  phone: number;
   message: string;
 };
 
@@ -23,19 +24,31 @@ const schema = yup
       message: 'Seuls les caractères alphabétiques sont autorisés.',
     }),
     email: string().required('Required').email('Cet email nest pas valide'),
-    phone: string().required('Required'),
+    phone: number().required('Required'),
     message: string().required('Required'),
   })
   .required();
 
 const Contact = () => {
-  const { register, handleSubmit, formState } = useForm<FormData>({
+  // const [formValue, setFormValue] = useState<FormData | null>(null);
+  const { register, handleSubmit, formState, reset } = useForm<FormData>({
     resolver: yupResolver(schema),
   });
 
   const handleContactSubmit = handleSubmit((data: FormData) => {
     console.log(data);
+    // Reset the form after successful submission
+    formState.isSubmitted && reset();
   });
+
+  // const onSubmit = (data: FormData) => {
+  //   console.log(formValue);
+  //   setFormValue(data);
+  // };
+
+  // const onSubmit = (data) => {
+  //   dispatch(loginUser(data));
+  // };
 
   return (
     <div className="bg-yellowAccent w-full mt-pageGap py-[7rem]">
@@ -45,17 +58,22 @@ const Contact = () => {
         <div className="flex mt-space2r">
           {/* form div */}
           <div className=" grow">
+            {/* form here */}
             <form
               className="w-4/5 h-full flex-col flex justify-between"
               onSubmit={handleContactSubmit}
+              // onSubmit={handleSubmit(onSubmit)}
             >
               {/* name */}
-              <div className="flexColumn-[start]">
+              <div className="flexColumn-[flex-start]">
                 <label className="mb-1 text-medium">Nom</label>
                 <input
+                  type="text"
                   {...register('name')}
                   placeholder="Votre nom"
-                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3 bg-yellowAccent placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
+                  required
+                  readOnly={false}
+                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3 bg-transparent placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
                 />
               </div>
               <div className="error">
@@ -64,12 +82,13 @@ const Contact = () => {
                   : ''}
               </div>
               {/* email */}
-              <div className="flexColumn-[start]">
+              <div className="flexColumn-[flex-start]">
                 <label className="mb-1 text-medium">Email</label>
                 <input
+                  type="text"
                   {...register('email')}
                   placeholder="Votre email address"
-                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3 bg-yellowAccent placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
+                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3  bg-transparent  placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
                 />
               </div>
               <div className="error">
@@ -79,11 +98,11 @@ const Contact = () => {
               </div>
 
               {/* phone */}
-              <div className="flexColumn-[start]">
+              <div className="flexColumn-[flex-start]">
                 <label className="mb-1 text-medium">Phone</label>
                 <input
                   type="number"
-                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3 bg-yellowAccent placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
+                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3  bg-transparent  placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
                   {...register('phone')}
                   placeholder="Votre numéro de téléphone"
                 />
@@ -94,17 +113,18 @@ const Contact = () => {
                   : ''}
               </div>
 
-              <div className="flexColumn-[start]">
+              <div className="flexColumn-[flex-start]">
                 <label className="mb-1 text-medium">Message</label>
                 <input
-                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3 bg-yellowAccent placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
+                  type="text"
+                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3 bg-transparent placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
                   {...register('message')}
                   placeholder="Saisir votre message"
                 />
               </div>
               <div className="error">
-                {formState.errors.phone?.message !== undefined
-                  ? `${formState.errors.phone?.message}`
+                {formState.errors.message?.message !== undefined
+                  ? `${formState.errors.message?.message}`
                   : ''}
               </div>
 
@@ -131,7 +151,7 @@ const Contact = () => {
             </div>
 
             {/* icons */}
-            <div className="displayFlex-[start] gap-2">
+            <div className="displayFlex-[flex-start] gap-2">
               <a href="/">
                 <img src={facebook} alt="facebook" />
               </a>
