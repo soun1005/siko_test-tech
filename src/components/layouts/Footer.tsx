@@ -86,7 +86,7 @@ const Footer = () => {
             © 2021 Siko Mobility. Tous droits réservés.
           </p>
           {/* icons */}
-          <div className="displayFlex-[start] gap-2">
+          <div className="displayFlex-[flex-start] gap-2">
             <a href="/">
               <img src={facebook} alt="facebook" className="w-[2rem]" />
             </a>

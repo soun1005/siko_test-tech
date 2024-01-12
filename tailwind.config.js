@@ -36,6 +36,8 @@ export const theme = {
       titleS: '18px',
       basic: '16px',
       medium: '14px',
+      small: '12px',
+      xSmall: '10px',
     },
     // By default the spacing scale is inherited by the padding, margin, width, minWidth, maxWidth, height, minHeight, maxHeight, gap, inset, space, translate, scrollMargin, and scrollPadding core plugins.
     spacing: {
@@ -108,6 +110,14 @@ export const plugins = [
         display: 'flex',
         'align-items': alignItems,
         'flex-direction': 'column',
+      }),
+
+      // flexColCenter-[justifyContent value]
+      flexColCenter: (justifyContent) => ({
+        display: 'flex',
+        'align-items': 'center',
+        'flex-direction': 'column',
+        'justify-content': justifyContent,
       }),
     });
   }),
