@@ -51,16 +51,16 @@ const Contact = () => {
   // };
 
   return (
-    <div className="bg-yellowAccent w-full mt-pageGap py-[7rem]">
+    <div className="bg-yellowAccent w-full mt-pageGap py-[7rem] phone:py-[4rem]">
       <div className="container ">
         <h1 className="text-titleXL">Contactez nous!</h1>
         {/* main div */}
-        <div className="flex mt-space2r">
+        <div className="flex mt-space2r phone:flex-col">
           {/* form div */}
-          <div className=" grow">
+          <div className="grow">
             {/* form here */}
             <form
-              className="w-4/5 h-full flex-col flex justify-between"
+              className="w-4/5 h-full flex-col flex justify-between screenL:w-full phone:mb-10"
               onSubmit={handleContactSubmit}
               // onSubmit={handleSubmit(onSubmit)}
             >
@@ -135,7 +135,7 @@ const Contact = () => {
           </div>
 
           {/* info div */}
-          <div className="grow ml-[74px]">
+          <div className="grow ml-[74px] phone:ml-0">
             <div className="mb-[40px]">
               <span className="text-titleM">Address</span>
               <p className="text-titleS">86 rue Dutot, 75015 Paris</p>
@@ -151,7 +151,7 @@ const Contact = () => {
             </div>
 
             {/* icons */}
-            <div className="displayFlex-[flex-start] gap-2">
+            <div className="displayFlex-[flex-start] gap-2 phone:justify-between">
               <a href="/">
                 <img src={facebook} alt="facebook" />
               </a>

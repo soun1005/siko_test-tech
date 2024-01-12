@@ -15,7 +15,7 @@ const HeroBtn = ({ text, icon = null, onClick, isActive }: Props) => {
     >
       {/* border width -> m-0.5 */}
       <p
-        className={`block text-white px-10 py-4 font-semibold rounded-full m-0.5 hover:bg-transparent duration-300 ${
+        className={`block text-white px-10 py-4 font-semibold rounded-full m-0.5 hover:bg-transparent duration-300 screenXL:font-medium screenXL:py-2 screenXL:px-6 tablet:font-medium tablet:px-4 tablet:text-xSmall ${
           isActive ? 'bg-transparent' : 'bg-black'
         } `}
       >

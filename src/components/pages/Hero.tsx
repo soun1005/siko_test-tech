@@ -48,15 +48,15 @@ const Hero = () => {
   return (
     <div className="text-white w-full h-auto">
       <div className="container displayFlex-[center] flex-col w-full h-full">
-        <h1 className="mb-[87px] text-titleXL">
+        <h1 className="mb-[87px] text-titleXL screenXL:text-titleL tablet:text-titleS phone:mb-0">
           Découvrez notre gamme de services pour toutes les mobilités
         </h1>
         {/* btn wrap */}
-        <div className="btnWrap w-full displayFlex-[space-around]">
+        <div className="btnWrap w-full displayFlex-[space-around] phone:hidden">
           {buttons}
         </div>
-        <div className="infoWrap h-full w-full">
-          <HeroCard data={heroCard} />
+        <div className="infoWrap h-full w-full ">
+          <HeroCard data={heroCard} phoneData={information} />
         </div>
       </div>
     </div>

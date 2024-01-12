@@ -7,7 +7,7 @@ export const theme = {
     center: 'true',
     padding: {
       DEFAULT: '2rem',
-      phoneMax: '1rem',
+      screenXL: '1rem',
     },
     // margin: '0 auto',
     'min-width': '1400px',
@@ -49,8 +49,10 @@ export const theme = {
       pageGap: '87px',
     },
     screens: {
+      screenXL: { max: '1280px' },
+      screenL: { max: '1080px' },
       tablet: { max: '850px' },
-      phoneMax: { max: '500px' },
+      phone: { max: '550px' },
     },
     backgroundSize: {
       '180%': '180%',
