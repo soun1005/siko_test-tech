@@ -18,8 +18,11 @@ const Nav = () => {
   );
 
   return (
-    <nav className="min-h-full">
-      <div className="container h-40 text-basic text-white displayFlex-[space-between]">
+    <nav
+      className="fixed top-0 z-10 
+    w-full bg-background shadow-md shadow-white/5 "
+    >
+      <div className="container h-[6rem] text-basic text-white displayFlex-[space-between]">
         {/* logo container */}
         <div>
           <img src={logo} alt="logo" className="min-w-full" />

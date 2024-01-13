@@ -1,8 +1,8 @@
-import { MouseEventHandler, useState } from 'react';
+import { MouseEventHandler, useState } from "react";
 
-import HeroBtn from '../common/HeroBtn';
-import information from '../../assets/information.json';
-import HeroCard from '../common/HeroCard';
+import HeroBtn from "../common/HeroBtn";
+import information from "../../assets/information.json";
+import HeroCard from "../common/HeroCard";
 
 const Hero = () => {
   // default card is set to first
@@ -11,15 +11,15 @@ const Hero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleHeroCard: MouseEventHandler<HTMLButtonElement> = (
-    e: React.MouseEvent<HTMLButtonElement>
+    e: React.MouseEvent<HTMLButtonElement>,
   ) => {
     // because of whitespace, 'find' didn't work. so had to trim()
     // const selectedTitle = e.currentTarget.textContent || '';
-    const selectedTitle = e.currentTarget.textContent?.trim() || '';
+    const selectedTitle = e.currentTarget.textContent?.trim() || "";
 
     // 타이틀과 맞는 정보 찾기
     const selectedInfo = information.find(
-      (info) => info.title === selectedTitle
+      (info) => info.title === selectedTitle,
     );
 
     // selectedInfo가 있을 시, setHeroCard에 저장
@@ -46,8 +46,8 @@ const Hero = () => {
   });
 
   return (
-    <div className="text-white w-full h-auto">
-      <div className="container displayFlex-[center] flex-col w-full h-full">
+    <div className="h-auto w-full text-white">
+      <div className="container h-full w-full flex-col displayFlex-[center]">
         <h1 className="mb-[87px] text-titleXL screenXL:text-titleL tablet:text-titleM phone:mb-0">
           Découvrez notre gamme de services pour toutes les mobilités
         </h1>

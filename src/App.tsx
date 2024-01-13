@@ -10,6 +10,7 @@ function App() {
   return (
     <div className=" min-h-screen">
       <Nav />
+      <section className="h-[10rem]"></section>
       <Hero />
       <Partenaire />
       <Review />

@@ -21,7 +21,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ isOpened }) => {
   return (
     <>
       {!isOpened && (
-        <div className="container whitespace-nowrap displayFlex-[center] tablet:hidden">
+        <div className="container whitespace-nowrap pr-0 displayFlex-[center] tablet:hidden">
           {/* desktop nav */}
           <ul className="w-10/12 gap-20 displayFlex-[center] screenXL:gap-8 screenXL:text-small screenL:text-xSmall tablet:hidden">
             <li className="p-2 hover:animate-float5">
