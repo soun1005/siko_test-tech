@@ -48,7 +48,7 @@ const Hero = () => {
   return (
     <div className="text-white w-full h-auto">
       <div className="container displayFlex-[center] flex-col w-full h-full">
-        <h1 className="mb-[87px] text-titleXL screenXL:text-titleL tablet:text-titleS phone:mb-0">
+        <h1 className="mb-[87px] text-titleXL screenXL:text-titleL tablet:text-titleM phone:mb-0">
           Découvrez notre gamme de services pour toutes les mobilités
         </h1>
         {/* btn wrap */}
