@@ -23,12 +23,12 @@ const NavLinks: React.FC<NavLinksProps> = ({ isOpened }) => {
       {!isOpened && (
         <div className="container whitespace-nowrap displayFlex-[center] tablet:hidden">
           {/* desktop nav */}
-          <ul className="group w-10/12 gap-20 displayFlex-[center] screenXL:gap-8 screenXL:text-small screenL:text-xSmall tablet:hidden">
+          <ul className="w-10/12 gap-20 displayFlex-[center] screenXL:gap-8 screenXL:text-small screenL:text-xSmall tablet:hidden">
             <li className="p-2 hover:animate-float5">
               <a href="/">About</a>
             </li>
             {/* when hiddenMenu is opened, no hover */}
-            <li className="dropdownMenu relative p-2 displayFlex-[center]">
+            <li className="dropdownMenu group relative p-2 displayFlex-[center]">
               <div className="cursor-pointer displayFlex-[center]">
                 <span>Nos services</span>
                 {/* icon */}
