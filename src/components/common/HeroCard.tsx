@@ -1,4 +1,7 @@
 import SquareBtn from "./SquareBtn";
+import { fadeIn, staggeredMotion } from "../../helpers/variants";
+import CustomMotionDiv from "../../helpers/customMotionDiv";
+import { motion } from "framer-motion";
 
 type Information = {
   title: string;
@@ -28,8 +31,13 @@ const HeroCard: React.FC<HeroCardProps> = ({ data, phoneData }) => {
 
   return (
     <div key={id} className="mt-space4r h-full w-full displayFlex-[center]">
-      {/* mobile version */}
-      <div className="aspect-{3/4} flex w-full justify-center rounded-[48px] bg-gray1 p-5 xl:w-4/5 tablet:rounded-[35px] tablet:p-[13px] phone:hidden">
+      <CustomMotionDiv
+        variants={fadeIn("left", 0.3)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.8 }}
+        className="aspect-{3/4} flex w-full justify-center rounded-[48px] bg-gray1 p-5 xl:w-4/5 tablet:rounded-[35px] tablet:p-[13px] phone:hidden"
+      >
         {/* image wrap */}
         <div className="aspect-{3/4} h-full w-1/3 ">
           <img
@@ -66,15 +74,23 @@ const HeroCard: React.FC<HeroCardProps> = ({ data, phoneData }) => {
             />
           </div>
         </div>
-      </div>
+      </CustomMotionDiv>
 
       {/* phone version */}
       <div className="phoneHeroCard hidden w-full phone:block">
         {phoneData &&
-          phoneData.map((data) => (
-            <a
+          phoneData.map((data, index) => (
+            <motion.a
+              variants={staggeredMotion("left", 1.5, 0.5)}
               href="/"
               key={data.id}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+                amount: 0.8,
+              }}
+              custom={index}
               className="aspect-{3/4} mb-space1r flex w-full justify-center rounded-[35px] bg-gray1 p-[13px]"
             >
               {/* image wrap */}
@@ -96,7 +112,7 @@ const HeroCard: React.FC<HeroCardProps> = ({ data, phoneData }) => {
                   </span>
                 </div>
               </div>
-            </a>
+            </motion.a>
           ))}
       </div>
     </div>

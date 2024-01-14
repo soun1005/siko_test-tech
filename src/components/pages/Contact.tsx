@@ -1,12 +1,14 @@
 // import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import { string, number } from 'yup';
-import facebook from '../../assets/facebook.png';
-import twitter from '../../assets/twitter.png';
-import whatsapp from '../../assets/whatsapp.png';
-import linkedin from '../../assets/linkedin.png';
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { string, number } from "yup";
+import facebook from "../../assets/facebook.png";
+import twitter from "../../assets/twitter.png";
+import whatsapp from "../../assets/whatsapp.png";
+import linkedin from "../../assets/linkedin.png";
+import { fadeIn } from "../../helpers/variants";
+import CustomMotionDiv from "../../helpers/customMotionDiv";
 
 type FormData = {
   name: string;
@@ -20,81 +22,83 @@ const nameRules = /^[A-Za-z]+$/;
 
 const schema = yup
   .object({
-    name: string().required('Required').matches(nameRules, {
-      message: 'Seuls les caractères alphabétiques sont autorisés.',
+    name: string().required("Required").matches(nameRules, {
+      message: "Seuls les caractères alphabétiques sont autorisés.",
     }),
-    email: string().required('Required').email('Cet email nest pas valide'),
-    phone: number().required('Required'),
-    message: string().required('Required'),
+    email: string().required("Required").email("Cet email nest pas valide"),
+    phone: number().required("Required"),
+    message: string().required("Required"),
   })
   .required();
 
 const Contact = () => {
-  // const [formValue, setFormValue] = useState<FormData | null>(null);
   const { register, handleSubmit, formState, reset } = useForm<FormData>({
     resolver: yupResolver(schema),
   });
 
   const handleContactSubmit = handleSubmit((data: FormData) => {
-    console.log(data);
     // Reset the form after successful submission
     formState.isSubmitted && reset();
   });
 
-  // const onSubmit = (data: FormData) => {
-  //   console.log(formValue);
-  //   setFormValue(data);
-  // };
-
-  // const onSubmit = (data) => {
-  //   dispatch(loginUser(data));
-  // };
-
   return (
-    <div className="bg-yellowAccent w-full mt-pageGap py-[7rem] phone:py-[4rem]">
-      <div className="container ">
-        <h1 className="text-titleXL">Contactez nous!</h1>
+    <div className="mt-pageGap w-full bg-yellowAccent py-[7rem] phone:py-[4rem]">
+      <div className="container">
+        <CustomMotionDiv
+          variants={fadeIn("down", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          <h1 className="text-titleXL">Contactez nous!</h1>
+        </CustomMotionDiv>
         {/* main div */}
-        <div className="flex mt-space2r phone:flex-col">
+
+        <div className="mt-space2r flex phone:flex-col">
           {/* form div */}
-          <div className="grow">
+          <CustomMotionDiv
+            variants={fadeIn("right", 0.8)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.8 }}
+            className="grow"
+          >
             {/* form here */}
             <form
-              className="w-4/5 h-full flex-col flex justify-between screenL:w-full phone:mb-10"
+              className="flex h-full w-4/5 flex-col justify-between screenL:w-full phone:mb-10"
               onSubmit={handleContactSubmit}
-              // onSubmit={handleSubmit(onSubmit)}
             >
               {/* name */}
               <div className="flexColumn-[flex-start]">
                 <label className="mb-1 text-medium">Nom</label>
                 <input
                   type="text"
-                  {...register('name')}
+                  {...register("name")}
                   placeholder="Votre nom"
                   required
                   readOnly={false}
-                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3 bg-transparent placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
+                  className="h-[2rem] w-full rounded-[6px] border border-gray3 bg-transparent pl-2 placeholder:m-6 placeholder:text-medium placeholder:text-black/[.33] focus:placeholder:text-transparent"
                 />
               </div>
               <div className="error">
                 {formState.errors.name?.message !== undefined
                   ? `${formState.errors.name?.message}`
-                  : ''}
+                  : ""}
               </div>
               {/* email */}
               <div className="flexColumn-[flex-start]">
                 <label className="mb-1 text-medium">Email</label>
                 <input
                   type="text"
-                  {...register('email')}
+                  {...register("email")}
                   placeholder="Votre email address"
-                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3  bg-transparent  placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
+                  className="h-[2rem] w-full rounded-[6px] border border-gray3 bg-transparent  pl-2  placeholder:m-6 placeholder:text-medium placeholder:text-black/[.33] focus:placeholder:text-transparent"
                 />
               </div>
               <div className="error">
                 {formState.errors.email?.message !== undefined
                   ? `${formState.errors.email?.message}`
-                  : ''}
+                  : ""}
               </div>
 
               {/* phone */}
@@ -102,40 +106,46 @@ const Contact = () => {
                 <label className="mb-1 text-medium">Phone</label>
                 <input
                   type="number"
-                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3  bg-transparent  placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
-                  {...register('phone')}
+                  className="h-[2rem] w-full rounded-[6px] border border-gray3 bg-transparent  pl-2  placeholder:m-6 placeholder:text-medium placeholder:text-black/[.33] focus:placeholder:text-transparent"
+                  {...register("phone")}
                   placeholder="Votre numéro de téléphone"
                 />
               </div>
               <div className="error">
                 {formState.errors.phone?.message !== undefined
                   ? `${formState.errors.phone?.message}`
-                  : ''}
+                  : ""}
               </div>
 
               <div className="flexColumn-[flex-start]">
                 <label className="mb-1 text-medium">Message</label>
                 <input
                   type="text"
-                  className="w-full h-[2rem] pl-2 rounded-[6px] border border-gray3 bg-transparent placeholder:text-medium placeholder:text-black/[.33] placeholder:m-6 focus:placeholder:text-transparent"
-                  {...register('message')}
+                  className="h-[2rem] w-full rounded-[6px] border border-gray3 bg-transparent pl-2 placeholder:m-6 placeholder:text-medium placeholder:text-black/[.33] focus:placeholder:text-transparent"
+                  {...register("message")}
                   placeholder="Saisir votre message"
                 />
               </div>
               <div className="error">
                 {formState.errors.message?.message !== undefined
                   ? `${formState.errors.message?.message}`
-                  : ''}
+                  : ""}
               </div>
 
-              <button className="mt-[40px] bg-background rounded-[5px] py-1">
-                <span className="text-white text-medium">Submit</span>
+              <button className="mt-[40px] rounded-[5px] bg-background py-1">
+                <span className="text-medium text-white">Submit</span>
               </button>
             </form>
-          </div>
+          </CustomMotionDiv>
 
           {/* info div */}
-          <div className="grow ml-[74px] phone:ml-0">
+          <CustomMotionDiv
+            variants={fadeIn("left", 0.8)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.8 }}
+            className="ml-[74px] grow phone:ml-0"
+          >
             <div className="mb-[40px]">
               <span className="text-titleM">Address</span>
               <p className="text-titleS">86 rue Dutot, 75015 Paris</p>
@@ -151,24 +161,24 @@ const Contact = () => {
             </div>
 
             {/* icons */}
-            <div className="displayFlex-[flex-start] gap-2 phone:justify-between">
+            <div className="gap-2 displayFlex-[flex-start] phone:justify-between">
               <a href="/">
                 <img src={facebook} alt="facebook" />
               </a>
               <a href="/">
-                {' '}
+                {" "}
                 <img src={linkedin} alt="linkedin" />
               </a>
               <a href="/">
-                {' '}
+                {" "}
                 <img src={twitter} alt="twitter" />
               </a>
               <a href="/">
-                {' '}
+                {" "}
                 <img src={whatsapp} alt="whatsapp" />
               </a>
             </div>
-          </div>
+          </CustomMotionDiv>
         </div>
       </div>
     </div>
