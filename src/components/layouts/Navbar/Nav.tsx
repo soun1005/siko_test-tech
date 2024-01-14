@@ -49,7 +49,7 @@ const Nav = () => {
 
         <ul
           className={`
-        fixed bottom-0 top-0 hidden w-full overflow-y-auto bg-background py-24 pl-4
+        fixed bottom-0 top-0 hidden w-full overflow-y-auto bg-gray1 py-24 pl-4
          duration-500 tablet:block ${open ? "left-0" : "left-[-100%]"}
         `}
         >
