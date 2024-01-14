@@ -33,6 +33,7 @@ export const theme = {
     },
     fontSize: {
       titleXL: "40px",
+      titleLL: "38px",
       titleL: "32px",
       titleM: "24px",
       titleS: "18px",

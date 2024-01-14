@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-// isOpened prop의 타입을 boolean으로 지정
 type NavLinksProps = {
   isOpened: boolean;
 };

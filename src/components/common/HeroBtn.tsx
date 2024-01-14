@@ -1,4 +1,4 @@
-import { MouseEventHandler, ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from "react";
 
 type Props = {
   text: string;
@@ -15,11 +15,11 @@ const HeroBtn = ({ text, icon = null, onClick, isActive }: Props) => {
     >
       {/* border width -> m-0.5 */}
       <p
-        className={`block text-white px-10 py-4 font-semibold rounded-full m-0.5 hover:bg-transparent duration-300 screenXL:font-medium screenXL:py-2 screenXL:px-6 tablet:font-medium tablet:px-4 tablet:text-xSmall ${
-          isActive ? 'bg-transparent' : 'bg-black'
+        className={`m-0.5 block rounded-full px-10 py-4 font-semibold text-white duration-300 hover:bg-transparent screenXL:px-6 screenXL:py-2 screenXL:font-medium tablet:px-4 tablet:text-xSmall tablet:font-medium ${
+          isActive ? "bg-transparent" : "bg-black"
         } `}
       >
-        {' '}
+        {" "}
         {text}
       </p>
 
@@ -29,4 +29,3 @@ const HeroBtn = ({ text, icon = null, onClick, isActive }: Props) => {
 };
 
 export default HeroBtn;
-// bg-gradient-to-r from-blueAccent to-greenAccent
