@@ -1,4 +1,6 @@
-import { MouseEventHandler, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
+import { fadeIn } from "../../helpers/variants";
+import CustomMotionDiv from "../../helpers/customMotionDiv";
 
 import HeroBtn from "../common/HeroBtn";
 import information from "../../assets/information.json";
@@ -10,19 +12,32 @@ const Hero = () => {
   // button active class
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 550);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 550);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const handleHeroCard: MouseEventHandler<HTMLButtonElement> = (
     e: React.MouseEvent<HTMLButtonElement>,
   ) => {
-    // because of whitespace, 'find' didn't work. so had to trim()
-    // const selectedTitle = e.currentTarget.textContent || '';
+    // because of whitespaces, 'find' didn't work. so had to trim()
+    // the code that didn't work => const selectedTitle = e.currentTarget.textContent || '';
     const selectedTitle = e.currentTarget.textContent?.trim() || "";
 
-    // 타이틀과 맞는 정보 찾기
     const selectedInfo = information.find(
       (info) => info.title === selectedTitle,
     );
 
-    // selectedInfo가 있을 시, setHeroCard에 저장
+    // when there is info -> save in the useState
     if (selectedInfo) {
       setHeroCard(selectedInfo);
     }
@@ -48,16 +63,45 @@ const Hero = () => {
   return (
     <div className="h-auto w-full text-white">
       <div className="container h-full w-full flex-col displayFlex-[center]">
-        <h1 className="mb-[87px] text-titleXL screenXL:text-titleL tablet:text-titleM phone:mb-0">
-          Découvrez notre gamme de services pour toutes les mobilités
-        </h1>
-        {/* btn wrap */}
-        <div className="btnWrap w-full displayFlex-[space-around] phone:hidden">
+        <CustomMotionDiv
+          variants={fadeIn("down", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          <h1 className="mb-[87px] text-titleXL leading-[0.9] screenXL:text-titleLL phone:mb-0">
+            Découvrez notre gamme de services pour toutes les mobilités
+          </h1>
+        </CustomMotionDiv>
+
+        <CustomMotionDiv
+          variants={fadeIn("down", 0.7)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.8 }}
+          className="btnWrap w-full displayFlex-[space-around] phone:hidden"
+        >
           {buttons}
-        </div>
-        <div className="infoWrap h-full w-full ">
-          <HeroCard data={heroCard} phoneData={information} />
-        </div>
+        </CustomMotionDiv>
+
+        {isMobile ? (
+          <div className="infoWrap h-full w-full">
+            <HeroCard data={heroCard} phoneData={information} />
+          </div>
+        ) : (
+          // desktop version
+          <CustomMotionDiv
+            variants={fadeIn("left", 1)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.8 }}
+            className="infoWrap h-full w-full"
+          >
+            <div className="infoWrap h-full w-full">
+              <HeroCard data={heroCard} phoneData={information} />
+            </div>
+          </CustomMotionDiv>
+        )}
       </div>
     </div>
   );
