@@ -81,7 +81,7 @@ const HeroCard: React.FC<HeroCardProps> = ({ data, phoneData }) => {
         {phoneData &&
           phoneData.map((data, index) => (
             <motion.a
-              variants={staggeredMotion("left", 1.5, 0.5)}
+              variants={staggeredMotion("up", 1.5, 0.5)}
               href="/"
               key={data.id}
               initial="initial"

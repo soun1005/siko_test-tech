@@ -7,18 +7,18 @@ const Partenaire = () => {
     <div className="mt-pageGap h-[33rem] animate-gradientSlow bg-gradient-to-r from-blueAccent to-greenAccent bg-200% screenXL:h-[28rem] phone:h-[25rem]">
       <div className="container h-full flex-col py-[8rem] displayFlex-[space-between] screenXL:py-[5rem] tablet:flexColCenter-[space-between] phone:py-[3rem]">
         <CustomMotionDiv
-          variants={fadeIn("left", 0.1)}
+          variants={fadeIn("down", 0.1)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.8 }}
-          className="w-full"
+          className="w-full "
         >
           <h3 className="text-center text-titleXL text-background screenXL:text-titleL tablet:leading-[1] phone:text-left phone:tracking-tighter">
             Vous avez un site e-commerce ou une boutique ?
           </h3>
         </CustomMotionDiv>
         <CustomMotionDiv
-          variants={fadeIn("right", 0.5)}
+          variants={fadeIn("up", 0.5)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.8 }}

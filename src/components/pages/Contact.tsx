@@ -57,7 +57,7 @@ const Contact = () => {
         <div className="mt-space2r flex phone:flex-col">
           {/* form div */}
           <CustomMotionDiv
-            variants={fadeIn("right", 0.8)}
+            variants={fadeIn("up", 0.8)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: true, amount: 0.8 }}
@@ -140,7 +140,7 @@ const Contact = () => {
 
           {/* info div */}
           <CustomMotionDiv
-            variants={fadeIn("left", 0.8)}
+            variants={fadeIn("up", 0.8)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: true, amount: 0.8 }}
