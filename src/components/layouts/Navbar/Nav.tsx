@@ -1,10 +1,12 @@
 import logo from "../../../assets/Siko-logo.png";
 import NavLinks from "./NavLinks";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Nav = () => {
   const [iconClickEffect, setIconClickEffect] = useState(false);
   const [open, setOpen] = useState(false);
+  // nav bg color
+  const [navbg, setNavbg] = useState(false);
 
   const toggleNav = () => {
     setOpen(!open);
@@ -17,10 +19,27 @@ const Nav = () => {
     </span>
   );
 
+  useEffect(() => {
+    //box-shadow of nav appearing after scrolling a bit
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setNavbg(true);
+      } else {
+        setNavbg(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
   return (
     <nav
-      className="fixed top-0 z-10 
-    w-full bg-background shadow-md shadow-white/5 "
+      className={`fixed top-0 z-10 
+    w-full bg-background shadow-md ${navbg && "shadow-white/10"}`}
     >
       <div className="container h-[6rem] text-basic text-white displayFlex-[space-between]">
         {/* logo container */}
