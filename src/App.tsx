@@ -9,9 +9,9 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative">
       <Nav />
-      <section className="h-[9rem]"></section>
+      <section className="h-[10rem] phone:h-[8rem]"></section>
       <Hero />
       <Partenaire />
       <Review />

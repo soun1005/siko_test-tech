@@ -8,7 +8,7 @@ const PageUpBtn = () => {
 
   return (
     <button
-      className="fixed bottom-5 right-5 flex w-full justify-end phone:bottom-[2.25rem]"
+      className="fixed bottom-5 right-5 flex w-full justify-end"
       onClick={scrollToTop}
     >
       <span className="material-symbols-outlined phone:text-2rem text-[3rem] text-white">
