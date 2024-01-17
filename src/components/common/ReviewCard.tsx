@@ -21,8 +21,8 @@ const ReviewCard = ({ data }: ReviewCardProps) => {
         initial="initial"
         whileInView="animate"
         viewport={{
-          once: true,
-          amount: 0.7,
+          once: false,
+          amount: 0.8,
         }}
         custom={index}
         className="flex aspect-square h-full w-full flex-col justify-between rounded-[48px] bg-gray1 p-[33px] text-white tablet:rounded-[20px] phone:p-[15px]"

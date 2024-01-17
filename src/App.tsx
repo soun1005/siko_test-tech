@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="relative min-h-screen">
       <Nav />
-      <section className="h-[7rem]"></section>
+      <section className="h-[9rem]"></section>
       <Hero />
       <Partenaire />
       <Review />

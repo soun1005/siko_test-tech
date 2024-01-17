@@ -69,7 +69,7 @@ const HeroCard: React.FC<HeroCardProps> = ({ data, phoneData }) => {
           {/* button wrap */}
           <div>
             <SquareBtn
-              text="Fomulaire"
+              text="Formulaire"
               styles="bg-transparent text-basic px-8 py-2 hover:bg-white cursor-pointer hover:text-black duration-300 screenL:py-[2px] screenL:text-medium phone:px-4 phone:py-1 phone:text-xSmall"
             />
           </div>
@@ -88,7 +88,7 @@ const HeroCard: React.FC<HeroCardProps> = ({ data, phoneData }) => {
               whileInView="animate"
               viewport={{
                 once: true,
-                amount: 0.8,
+                amount: 0.5,
               }}
               custom={index}
               className="aspect-{3/4} mb-space1r flex w-full justify-center rounded-[35px] bg-gray1 p-[13px]"
@@ -104,10 +104,10 @@ const HeroCard: React.FC<HeroCardProps> = ({ data, phoneData }) => {
               {/* information wrap */}
               <div className="infoWrap flex w-2/3 flex-col justify-between pl-[14px] pr-[12px]">
                 <div>
-                  <h2 className="mb-2 inline-block bg-gradient-to-r from-logoColor via-blueAccent to-greenAccent bg-clip-text text-small font-bold text-transparent hover:animate-gradient hover:bg-180%">
+                  <h2 className="mb-2 inline-block bg-gradient-to-r from-logoColor via-blueAccent to-greenAccent bg-clip-text text-medium font-bold text-transparent hover:animate-gradient hover:bg-180%">
                     {data.title}
                   </h2>
-                  <span className=" mb-[-12px] inline-block text-small font-light tracking-tighter text-gray5">
+                  <span className="mb-[-12px] mt-2 inline-block text-medium font-light tracking-tighter text-gray5">
                     {data.subTitle}.
                   </span>
                 </div>

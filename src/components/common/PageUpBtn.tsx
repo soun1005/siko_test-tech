@@ -8,10 +8,10 @@ const PageUpBtn = () => {
 
   return (
     <button
-      className="fixed bottom-5 right-5 flex w-full justify-end"
+      className="fixed bottom-5 right-5 flex w-full justify-end phone:bottom-[2.25rem]"
       onClick={scrollToTop}
     >
-      <span className="material-symbols-outlined text-[2rem] text-white">
+      <span className="material-symbols-outlined phone:text-2rem text-[3rem] text-white">
         arrow_circle_up
       </span>
     </button>

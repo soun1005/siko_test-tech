@@ -57,11 +57,11 @@ const Contact = () => {
         <div className="mt-space2r flex phone:flex-col">
           {/* form div */}
           <CustomMotionDiv
-            variants={fadeIn("up", 0.8)}
+            variants={fadeIn("down", 1)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: true, amount: 0.8 }}
-            className="grow"
+            className="w-full grow"
           >
             {/* form here */}
             <form
@@ -69,7 +69,7 @@ const Contact = () => {
               onSubmit={handleContactSubmit}
             >
               {/* name */}
-              <div className="flexColumn-[flex-start]">
+              <div className="mt-4 flexColumn-[flex-start]">
                 <label className="mb-1 text-medium">Nom</label>
                 <input
                   type="text"
@@ -86,7 +86,7 @@ const Contact = () => {
                   : ""}
               </div>
               {/* email */}
-              <div className="flexColumn-[flex-start]">
+              <div className="mt-4 flexColumn-[flex-start]">
                 <label className="mb-1 text-medium">Email</label>
                 <input
                   type="text"
@@ -102,7 +102,7 @@ const Contact = () => {
               </div>
 
               {/* phone */}
-              <div className="flexColumn-[flex-start]">
+              <div className="mt-4 flexColumn-[flex-start]">
                 <label className="mb-1 text-medium">Phone</label>
                 <input
                   type="number"
@@ -117,7 +117,7 @@ const Contact = () => {
                   : ""}
               </div>
 
-              <div className="flexColumn-[flex-start]">
+              <div className="mt-4 flexColumn-[flex-start]">
                 <label className="mb-1 text-medium">Message</label>
                 <input
                   type="text"
@@ -140,24 +140,24 @@ const Contact = () => {
 
           {/* info div */}
           <CustomMotionDiv
-            variants={fadeIn("up", 0.8)}
+            variants={fadeIn("up", 1)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: true, amount: 0.8 }}
-            className="ml-[74px] grow phone:ml-0"
+            viewport={{ once: false, amount: 0.8 }}
+            className="ml-[74px] w-full grow phone:ml-0"
           >
             <div className="mb-[40px]">
               <span className="text-titleM">Address</span>
-              <p className="text-titleS">86 rue Dutot, 75015 Paris</p>
+              <p className="text-titleS">3 avenue cottakji 75015</p>
             </div>
             <div className="mb-[40px]">
               <span className="text-titleM">Email</span>
-              <p className="text-titleS">contact@sikomobility.com</p>
+              <p className="text-titleS">contact@crocochat.com</p>
             </div>
             <div className="mb-[40px]">
               <span className="text-titleM">Phone</span>
-              <p className="text-titleS">01 89 71 34 21</p>
-              <p className="text-titleS">06 31 79 91 84</p>
+              <p className="text-titleS">01 59 00 28 55</p>
+              <p className="text-titleS">06 93 79 07 14</p>
             </div>
 
             {/* icons */}
