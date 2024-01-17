@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { staggeredMotion } from "../../../helpers/variants";
+import { motion } from "framer-motion";
 
 type NavLinksProps = {
   isOpened: boolean;
@@ -17,12 +19,19 @@ const NavLinks: React.FC<NavLinksProps> = ({ isOpened }) => {
     setServiceMenu(!serviceMenu);
   };
 
+  const navHiddenLinks = [
+    "Assurance",
+    "Assistance",
+    "Maintenance",
+    "Extension de garantie",
+  ];
+
   return (
     <>
       {!isOpened && (
         <div className="container whitespace-nowrap pr-0 displayFlex-[center] tablet:hidden">
           {/* desktop nav */}
-          <ul className="w-10/12 gap-20 displayFlex-[center] screenXL:gap-8 screenXL:text-small screenL:text-xSmall tablet:hidden">
+          <ul className="screenXXL:gap-[3rem] w-10/12 gap-20 displayFlex-[center] screenXL:gap-8 screenXL:text-small screenL:text-xSmall tablet:hidden">
             <li className="p-2 hover:animate-float5">
               <a href="/">About</a>
             </li>
@@ -34,49 +43,39 @@ const NavLinks: React.FC<NavLinksProps> = ({ isOpened }) => {
                 {arrowDown}
               </div>
               {/* nav dropdown hidden menu */}
-              <ul className="absolute left-0 top-[2.5rem] hidden rounded-lg bg-gray1 p-4 hover:md:block group-hover:md:block">
-                <li>
-                  <a
-                    href="/"
-                    className="mb-[4px] inline-block w-full cursor-pointer rounded p-[5px] hover:bg-yellowAccent hover:text-black"
-                  >
-                    Assurance
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="mb-[4px] inline-block w-full cursor-pointer rounded p-[5px] hover:bg-yellowAccent hover:text-black"
-                  >
-                    Assistance
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="mb-[4px] inline-block w-full cursor-pointer rounded p-[5px] hover:bg-yellowAccent hover:text-black"
-                  >
-                    Maintenance
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="inline-block  w-full cursor-pointer rounded p-[5px] hover:bg-yellowAccent hover:text-black"
-                  >
-                    Extension de garantie
-                  </a>
-                </li>
+              <ul className="absolute left-0 top-[2.5rem] hidden rounded-lg bg-gray1 p-4 shadow-[0px_1px_13px_1px_rgba(255,255,255,0.1)] hover:md:block group-hover:md:block">
+                {navHiddenLinks.map((link, index) => {
+                  return (
+                    <motion.li
+                      variants={staggeredMotion("down", 0.1, 0.4, 0.4)}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{
+                        once: false,
+                        amount: 0.7,
+                      }}
+                      custom={index}
+                      key={index}
+                    >
+                      <a
+                        href="/"
+                        className="mb-[4px] inline-block w-full cursor-pointer rounded p-[5px] hover:bg-yellowAccent hover:text-black"
+                      >
+                        {link}
+                      </a>
+                    </motion.li>
+                  );
+                })}
               </ul>
             </li>
-            <li className="p-2  hover:animate-float5">
+            <li className="p-2 hover:animate-float5">
               <a href="/">Devenir partenaire</a>
             </li>
-            <li className="p-2  hover:animate-float5">
+            <li className="p-2 hover:animate-float5">
               <a href="/">Espace marchand</a>
             </li>
           </ul>
-          <button className="rounded-full border-[3px] border-solid border-yellow px-10 py-2 displayFlex-[center] hover:animate-vibrate screenXL:border-[2px] screenXL:px-4 screenXL:py-2 tablet:hidden">
+          <button className="ml-space2r rounded-full border-[3px] border-solid border-yellow px-10 py-2 displayFlex-[center] hover:animate-vibrate screenXL:border-[2px] screenXL:px-4 screenXL:py-2 tablet:hidden">
             <p className="screenXL:text-small">Simulation</p>
             <span className="material-symbols-outlined">
               keyboard_double_arrow_right
@@ -109,7 +108,29 @@ const NavLinks: React.FC<NavLinksProps> = ({ isOpened }) => {
           {/* nav dropdown hidden menu */}
           {serviceMenu && (
             <ul className="left-0 pt-space1r font-extralight text-gray4">
-              <li>
+              {navHiddenLinks.map((link, index) => {
+                return (
+                  <motion.li
+                    variants={staggeredMotion("down", 0.1, 0.2, 0.2)}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{
+                      once: false,
+                      amount: 0.7,
+                    }}
+                    custom={index}
+                    key={index}
+                  >
+                    <a
+                      href="/"
+                      className="mb-[4px] inline-block w-full cursor-pointer rounded p-[5px] hover:bg-yellowAccent hover:text-black"
+                    >
+                      {link}
+                    </a>
+                  </motion.li>
+                );
+              })}
+              {/* <li>
                 <a
                   href="/"
                   className="mb-[4px] inline-block w-full cursor-pointer rounded p-[5px] hover:bg-yellowAccent hover:text-black"
@@ -140,7 +161,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ isOpened }) => {
                 >
                   Extension de garantie
                 </a>
-              </li>
+              </li> */}
             </ul>
           )}
         </button>
