@@ -52,6 +52,7 @@ export const theme = {
       pageGap: "87px",
     },
     screens: {
+      screenXXL: { max: "1500px" },
       screenXL: { max: "1280px" },
       screenL: { max: "1080px" },
       tablet: { max: "850px" },

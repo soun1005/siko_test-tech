@@ -23,13 +23,14 @@ export const staggeredMotion = (
   direction: string,
   totalDelayTime: number,
   delayTime: number,
+  duration: number = 1.2,
 ) => {
   return {
     initial: {
       opacity: 0,
       // y: 100,
       y: direction === "up" ? 80 : direction === "down" ? -80 : 0,
-      x: direction === "left" ? 120 : direction === "right" ? -80 : 0,
+      x: direction === "left" ? 80 : direction === "right" ? -80 : 0,
     },
     animate: (index: number) => ({
       opacity: 1,
@@ -37,7 +38,8 @@ export const staggeredMotion = (
       x: 0,
       transition: {
         delay: totalDelayTime + delayTime * index,
-        duration: 1.2,
+        duration: duration,
+        type: "tween",
       },
     }),
   };
