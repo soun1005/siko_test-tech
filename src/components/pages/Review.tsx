@@ -1,5 +1,5 @@
-import reviews from "../../assets/reviews.json";
 import ReviewCard from "../common/ReviewCard";
+import reviews from "../../assets/reviews.json";
 
 const Review = () => {
   return (

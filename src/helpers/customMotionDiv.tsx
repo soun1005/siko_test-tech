@@ -1,5 +1,5 @@
-import { motion, HTMLMotionProps } from "framer-motion";
 import { Component } from "react";
+import { motion, HTMLMotionProps } from "framer-motion";
 
 interface CustomMotionDivProps extends HTMLMotionProps<"div"> {
   initial?: "initial" | "final" | "hidden";

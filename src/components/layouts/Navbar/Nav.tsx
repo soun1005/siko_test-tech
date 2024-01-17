@@ -1,6 +1,6 @@
-import logo from "../../../assets/crocodile mobility.png";
-import NavLinks from "./NavLinks";
 import { useState, useEffect } from "react";
+import NavLinks from "./NavLinks";
+import logo from "../../../assets/crocodile mobility.png";
 
 const Nav = () => {
   const [iconClickEffect, setIconClickEffect] = useState(false);

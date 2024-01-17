@@ -3,8 +3,9 @@ import { fadeIn } from "../../helpers/variants";
 import CustomMotionDiv from "../../helpers/customMotionDiv";
 
 import HeroBtn from "../common/HeroBtn";
-import information from "../../assets/information.json";
 import HeroCard from "../common/HeroCard";
+
+import information from "../../assets/information.json";
 
 const Hero = () => {
   // default card is set to first
@@ -91,7 +92,7 @@ const Hero = () => {
         ) : (
           // desktop version
           <CustomMotionDiv
-            variants={fadeIn("left", 1)}
+            variants={fadeIn("up", 1)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.8 }}

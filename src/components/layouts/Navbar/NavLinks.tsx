@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { staggeredMotion } from "../../../helpers/variants";
 import { motion } from "framer-motion";
+import { staggeredMotion } from "../../../helpers/variants";
 
 type NavLinksProps = {
   isOpened: boolean;
@@ -31,7 +31,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ isOpened }) => {
       {!isOpened && (
         <div className="container whitespace-nowrap pr-0 displayFlex-[center] tablet:hidden">
           {/* desktop nav */}
-          <ul className="screenXXL:gap-[3rem] w-10/12 gap-20 displayFlex-[center] screenXL:gap-8 screenXL:text-small screenL:text-xSmall tablet:hidden">
+          <ul className="w-10/12 gap-20 displayFlex-[center] screenXXL:gap-[3rem] screenXL:gap-8 screenXL:text-small screenL:text-xSmall tablet:hidden">
             <li className="p-2 hover:animate-float5">
               <a href="/">About</a>
             </li>

@@ -1,10 +1,10 @@
+import { fadeIn } from "../../helpers/variants";
+import CustomMotionDiv from "../../helpers/customMotionDiv";
 import logo from "../../assets/crocodile mobility.png";
 import facebook from "../../assets/facebook.png";
 import twitter from "../../assets/twitter.png";
 import whatsapp from "../../assets/whatsapp.png";
 import linkedin from "../../assets/linkedin.png";
-import { fadeIn } from "../../helpers/variants";
-import CustomMotionDiv from "../../helpers/customMotionDiv";
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
       variants={fadeIn("up", 0.2)}
       initial="hidden"
       whileInView={"show"}
-      viewport={{ once: false, amount: 0.5 }}
+      viewport={{ once: false, amount: 0.3 }}
       className="mt-pageGap"
     >
       <div className="container text-white">

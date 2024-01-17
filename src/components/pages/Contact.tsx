@@ -1,14 +1,15 @@
-// import { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import { string, number } from "yup";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+import CustomMotionDiv from "../../helpers/customMotionDiv";
+
 import facebook from "../../assets/facebook.png";
 import twitter from "../../assets/twitter.png";
 import whatsapp from "../../assets/whatsapp.png";
 import linkedin from "../../assets/linkedin.png";
 import { fadeIn } from "../../helpers/variants";
-import CustomMotionDiv from "../../helpers/customMotionDiv";
 
 type FormData = {
   name: string;
@@ -57,7 +58,7 @@ const Contact = () => {
         <div className="mt-space2r flex phone:flex-col">
           {/* form div */}
           <CustomMotionDiv
-            variants={fadeIn("down", 1)}
+            variants={fadeIn("up", 1)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: true, amount: 0.8 }}
