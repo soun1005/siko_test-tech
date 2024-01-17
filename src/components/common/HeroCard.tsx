@@ -107,7 +107,7 @@ const HeroCard: React.FC<HeroCardProps> = ({ data, phoneData }) => {
                   <h2 className="mb-2 inline-block bg-gradient-to-r from-logoColor via-blueAccent to-greenAccent bg-clip-text text-medium font-bold text-transparent hover:animate-gradient hover:bg-180%">
                     {data.title}
                   </h2>
-                  <span className="mb-[-12px] mt-2 inline-block text-medium font-light tracking-tighter text-gray5">
+                  <span className="mb-[-12px] mt-2 inline-block text-small font-light tracking-tighter text-gray5">
                     {data.subTitle}.
                   </span>
                 </div>
