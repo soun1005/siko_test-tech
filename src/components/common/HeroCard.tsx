@@ -32,10 +32,10 @@ const HeroCard: React.FC<HeroCardProps> = ({ data, phoneData }) => {
   return (
     <div key={id} className="mt-space4r h-full w-full displayFlex-[center]">
       <CustomMotionDiv
-        variants={fadeIn("left", 0.3)}
+        variants={fadeIn("up", 0.3)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: false, amount: 0.8 }}
+        viewport={{ once: false, amount: 0.5 }}
         className="aspect-{3/4} flex w-full justify-center rounded-[48px] bg-gray1 p-5 xl:w-4/5 tablet:rounded-[35px] tablet:p-[13px] phone:hidden"
       >
         {/* image wrap */}
