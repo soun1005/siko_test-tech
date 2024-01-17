@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="mb-pageGap flex justify-between phone:flexColCenter-[center]">
           <div className="w-[27%] phone:mb-8 phone:w-full">
             <div className="mb-space1r phone:flexColCenter-[center]">
-              <img src={logo} alt="logo" />
+              <img src={logo} alt="logo" className="w-3/4" />
             </div>
             <p className="text-medium font-extralight tracking-tighter text-gray4 screenL:text-medium tablet:text-[10px] phone:text-center phone:text-medium">
               Crocochat Mobility adhère aux normes sociales et environnementales
