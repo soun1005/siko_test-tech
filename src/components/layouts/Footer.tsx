@@ -1,4 +1,4 @@
-import logo from "../../assets/footer-logo.png";
+import logo from "../../assets/crocodile mobility.png";
 import facebook from "../../assets/facebook.png";
 import twitter from "../../assets/twitter.png";
 import whatsapp from "../../assets/whatsapp.png";
@@ -12,7 +12,7 @@ const Footer = () => {
       variants={fadeIn("up", 0.2)}
       initial="hidden"
       whileInView={"show"}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.5 }}
       className="mt-pageGap"
     >
       <div className="container text-white">
@@ -23,14 +23,14 @@ const Footer = () => {
               <img src={logo} alt="logo" />
             </div>
             <p className="text-medium font-extralight tracking-tighter text-gray4 screenL:text-medium tablet:text-[10px] phone:text-center phone:text-medium">
-              Siko Mobility respecte les normes sociales et environnementales et
-              s'inscrit dans une démarche de progrès.
+              Crocochat Mobility adhère aux normes sociales et environnementales
+              tout en poursuivant son engagement envers l'amélioration continue.
             </p>
           </div>
           <div className="flex w-3/5 justify-between pl-[5rem] screenXL:pl-0 tablet:w-[67%] tablet:gap-2 phone:w-full phone:flexColCenter-[center]">
             <div className="phone:inline-block phone:w-full phone:text-center">
               <h3 className="mb-4 screenL:text-medium tablet:text-xSmall phone:mb-2 phone:text-basic">
-                SIKO MOBILITY
+                CROCOCHAT MOBILITY
               </h3>
               <ul className="text-medium tracking-tighter text-gray4 screenL:text-[10px] phone:mb-8 phone:text-medium">
                 <li className="mb-[8px] font-extralight hover:font-normal">
@@ -40,13 +40,13 @@ const Footer = () => {
                   <a href="/">Devenir partenaire</a>
                 </li>
                 <li className="mb-[8px] font-extralight hover:font-normal">
-                  <a href="/">Qui sommes-nous?</a>
+                  <a href="/">About Crocochat mobility</a>
                 </li>
                 <li className="mb-[8px] font-extralight hover:font-normal">
                   <a href="/">Contact</a>
                 </li>
                 <li className="mb-[8px] font-extralight hover:font-normal">
-                  <a href="/">FAQ</a>
+                  <a href="/">F & Q</a>
                 </li>
               </ul>
             </div>
@@ -59,7 +59,7 @@ const Footer = () => {
                   <a href="/">Mentions légales</a>
                 </li>
                 <li className="mb-[8px] font-extralight hover:font-normal">
-                  <a href="/">Conditions générales de vente</a>
+                  <a href="/">Conditions générales</a>
                 </li>
                 <li className="mb-[8px] font-extralight hover:font-normal">
                   <a href="/">Politique de confidentialité</a>
@@ -78,16 +78,16 @@ const Footer = () => {
                   <a href="/">Nos services</a>
                 </li>
                 <li className="mb-[8px] font-extralight hover:font-normal">
-                  <a href="/">Assurance</a>
+                  <a href="/">Options d'assurance</a>
                 </li>
                 <li className="mb-[8px] font-extralight hover:font-normal">
-                  <a href="/">Forfait entretien</a>
+                  <a href="/">Forfaits d'entretien</a>
                 </li>
                 <li className="mb-[8px] font-extralight hover:font-normal">
                   <a href="/">Assistance dépannage</a>
                 </li>
                 <li className="mb-[8px] font-extralight hover:font-normal">
-                  <a href="/">Garantie 3ans</a>
+                  <a href="/">Garantie 5ans</a>
                 </li>
               </ul>
             </div>
@@ -97,7 +97,7 @@ const Footer = () => {
         {/* bottom */}
         <div className="my-[30px] flex items-center justify-between border-t-[1px] border-gray4 pt-space1r phone:flex-col-reverse">
           <p className="text-medium text-gray4">
-            © 2021 Siko Mobility. Tous droits réservés.
+            © 2024 Crocochat Mobility. Tous droits réservés.
           </p>
           {/* icons */}
           <div className="gap-2 displayFlex-[flex-start] phone:mb-space1r phone:gap-6">

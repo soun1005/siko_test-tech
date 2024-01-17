@@ -14,7 +14,7 @@ const Partenaire = () => {
           className="w-full "
         >
           <h3 className="text-center text-titleXL text-background screenXL:text-titleL tablet:leading-[1] phone:text-left phone:tracking-tighter">
-            Vous avez un site e-commerce ou une boutique ?
+            Possédez-vous un site e-commerce ou une boutique?
           </h3>
         </CustomMotionDiv>
         <CustomMotionDiv
@@ -28,7 +28,7 @@ const Partenaire = () => {
             Rejoignez nos partenaires et offrez de multiples services et
             avantages à vos clients.
             <br />
-            Augmentez votre chiffre d’affaire avec notre solution en
+            Augmentez votre chiffre d’affaires avec notre solution de
             financement.
           </p>
         </CustomMotionDiv>
@@ -40,7 +40,7 @@ const Partenaire = () => {
           className="w-full text-center"
         >
           <SquareBtn
-            text="Devenir Partenaire"
+            text="Collaborer avec Nous"
             styles="bg-transparent text-titleM border-background px-12 py-4 hover:bg-black hover:text-white duration-300 screenXL:px-8 screenXL:py-2 screenXL:text-basic"
           />
         </CustomMotionDiv>

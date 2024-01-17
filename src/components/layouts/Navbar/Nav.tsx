@@ -1,4 +1,4 @@
-import logo from "../../../assets/Siko-logo.png";
+import logo from "../../../assets/crocodile mobility.png";
 import NavLinks from "./NavLinks";
 import { useState, useEffect } from "react";
 
@@ -44,7 +44,7 @@ const Nav = () => {
       <div className="container h-[6rem] text-basic text-white displayFlex-[space-between]">
         {/* logo container */}
         <div>
-          <img src={logo} alt="logo" className="min-w-full" />
+          <img src={logo} alt="logo" className="w-3/4" />
         </div>
 
         {/* mobile burger menu */}
