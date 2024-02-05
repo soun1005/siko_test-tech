@@ -17,12 +17,12 @@ const ReviewCard = ({ data }: ReviewCardProps) => {
 
     return (
       <motion.div
-        variants={staggeredMotion("up", 0.3, 0.1)}
+        variants={staggeredMotion("up", 0.2, 0.1)}
         initial="initial"
         whileInView="animate"
         viewport={{
           once: false,
-          amount: 0.8,
+          amount: 0.5,
         }}
         custom={index}
         className="flex aspect-square h-full w-full flex-col justify-between rounded-[48px] bg-gray1 p-[33px] text-white tablet:rounded-[20px] phone:p-[15px]"

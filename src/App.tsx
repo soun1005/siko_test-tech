@@ -9,6 +9,7 @@ import "./App.css";
 
 function App() {
   return (
+    // <div className="w-full">
     <div className="relative">
       <Nav />
       <section className="h-[10rem] phone:h-[8rem]"></section>

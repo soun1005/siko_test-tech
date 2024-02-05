@@ -46,10 +46,10 @@ const Contact = () => {
     <div className="mt-pageGap w-full bg-yellowAccent py-[7rem] phone:py-[4rem]">
       <div className="container">
         <CustomMotionDiv
-          variants={fadeIn("down", 0.2)}
+          variants={fadeIn("down", 0.5)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: true, amount: 0.8 }}
+          viewport={{ once: false, amount: 0.7 }}
         >
           <h1 className="text-titleXL">Contactez nous!</h1>
         </CustomMotionDiv>
@@ -58,10 +58,10 @@ const Contact = () => {
         <div className="mt-space2r flex phone:flex-col">
           {/* form div */}
           <CustomMotionDiv
-            variants={fadeIn("up", 1)}
+            variants={fadeIn("up", 0.5)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: true, amount: 0.8 }}
+            viewport={{ once: false, amount: 0.7 }}
             className="w-full grow"
           >
             {/* form here */}
@@ -141,10 +141,10 @@ const Contact = () => {
 
           {/* info div */}
           <CustomMotionDiv
-            variants={fadeIn("up", 1)}
+            variants={fadeIn("up", 0.5)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.8 }}
+            viewport={{ once: false, amount: 0.7 }}
             className="ml-[74px] w-full grow phone:ml-0"
           >
             <div className="mb-[40px]">

@@ -4,13 +4,14 @@ import CustomMotionDiv from "../../helpers/customMotionDiv";
 
 const Partenaire = () => {
   return (
+    // <div className="mt-pageGap h-[33rem] w-full animate-gradientSlow bg-gradient-to-r from-blueAccent to-greenAccent bg-200% screenXL:h-[28rem] phone:h-[25rem]">
     <div className="mt-pageGap h-[33rem] animate-gradientSlow bg-gradient-to-r from-blueAccent to-greenAccent bg-200% screenXL:h-[28rem] phone:h-[25rem]">
       <div className="container h-full flex-col py-[8rem] displayFlex-[space-between] screenXL:py-[5rem] tablet:flexColCenter-[space-between] phone:py-[3rem]">
         <CustomMotionDiv
           variants={fadeIn("down", 0.1)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.8 }}
+          viewport={{ once: false, amount: 0.7 }}
           className="w-full "
         >
           <h3 className="text-center text-titleXL text-background screenXL:text-titleL tablet:leading-[1] phone:text-left phone:tracking-tighter">
@@ -18,10 +19,10 @@ const Partenaire = () => {
           </h3>
         </CustomMotionDiv>
         <CustomMotionDiv
-          variants={fadeIn("up", 0.5)}
+          variants={fadeIn("up", 0.2)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.8 }}
+          viewport={{ once: false, amount: 0.7 }}
           className="w-full"
         >
           <p className="text-center text-titleM text-white tablet:text-titleS tablet:font-extralight phone:text-left phone:text-medium">
@@ -33,10 +34,10 @@ const Partenaire = () => {
           </p>
         </CustomMotionDiv>
         <CustomMotionDiv
-          variants={fadeIn("up", 1)}
+          variants={fadeIn("up", 0.4)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.8 }}
+          viewport={{ once: false, amount: 0.7 }}
           className="w-full text-center"
         >
           <SquareBtn

@@ -1016,6 +1016,11 @@ video {
   background-color: rgb(255 248 73 / var(--tw-bg-opacity));
 }
 
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -1574,8 +1579,16 @@ video {
 }
 
 @media (max-width: 1080px) {
+  .screenL\:ml-8 {
+    margin-left: 2rem;
+  }
+
   .screenL\:w-full {
     width: 100%;
+  }
+
+  .screenL\:w-3\/5 {
+    width: 60%;
   }
 
   .screenL\:py-\[2px\] {
@@ -1601,6 +1614,10 @@ video {
 }
 
 @media (max-width: 850px) {
+  .tablet\:ml-8 {
+    margin-left: 2rem;
+  }
+
   .tablet\:block {
     display: block;
   }

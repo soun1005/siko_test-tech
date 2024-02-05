@@ -13,6 +13,7 @@ const Footer = () => {
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: false, amount: 0.3 }}
+      // className="mt-pageGap w-full"
       className="mt-pageGap"
     >
       <div className="container text-white">

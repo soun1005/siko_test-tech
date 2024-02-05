@@ -11,7 +11,7 @@ export const fadeIn = (direction: string, delay: number) => {
       opacity: 1,
       transition: {
         type: "tween",
-        duration: 1.2,
+        duration: 0.7,
         delay,
         ease: [0.25, 0.25, 0.25, 0.75],
       },
@@ -23,7 +23,7 @@ export const staggeredMotion = (
   direction: string,
   totalDelayTime: number,
   delayTime: number,
-  duration: number = 1.2,
+  duration: number = 0.5,
 ) => {
   return {
     initial: {

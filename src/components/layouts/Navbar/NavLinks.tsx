@@ -29,6 +29,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ isOpened }) => {
   return (
     <>
       {!isOpened && (
+        // <div className="whitespace-nowrap pr-0 displayFlex-[center] tablet:hidden">
         <div className="container whitespace-nowrap pr-0 displayFlex-[center] tablet:hidden">
           {/* desktop nav */}
           <ul className="w-10/12 gap-20 displayFlex-[center] screenXXL:gap-[3rem] screenXL:gap-8 screenXL:text-small screenL:text-xSmall tablet:hidden">
@@ -47,7 +48,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ isOpened }) => {
                 {navHiddenLinks.map((link, index) => {
                   return (
                     <motion.li
-                      variants={staggeredMotion("down", 0.1, 0.4, 0.4)}
+                      variants={staggeredMotion("down", 0.1, 0.2, 0.2)}
                       initial="initial"
                       whileInView="animate"
                       viewport={{
